@@ -11,10 +11,10 @@ if os.getuid() == 0:
 
 try:
     architecture = subprocess.check_output(["uname", "-m"]).decode("UTF-8").strip()
-    expected_architecture = "x86_64"
+    expected_architectures = ("x86_64", "amd64")
 
-    if architecture.lower() != expected_architecture:
-        msg = f"Roblox Studio will only run on the {expected_architecture} CPU architecture. " \
+    if architecture.lower() not in (expected_architectures):
+        msg = f"Roblox Studio will only run on the x86_64 or amd64 CPU architectures. " \
               f"The CPU architecture of this machine is {architecture}. The installer will now exit."
         print(msg, file=sys.stderr)
         sys.exit(-1)

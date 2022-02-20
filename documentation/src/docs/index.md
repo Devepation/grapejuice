@@ -5,7 +5,7 @@ title: Documentation Home
 
  - x86_64 CPU
  - GPU that supports OpenGL 4.0 or Vulkan (both of which are available on modern GPUs)
- - x86_64 GNU/Linux system with glibc (provided by almost all modern distributions) 
+ - x86_64 GNU/Linux system with glibc or amd64 FreeBSD 13.0+ system
 
 **Notice**: Grapejuice is currently not supported on ARM devices, such as a Raspberry Pi or Pinebook.
 
@@ -51,11 +51,13 @@ title: Documentation Home
 - Calculate: [Install from source](Installing-from-source/Gentoo-Linux-and-similar)
 - Funtoo: [Install from source](Installing-from-source/Gentoo-Linux-and-similar)
 - Sabayon: [Install from source](Installing-from-source/Gentoo-Linux-and-similar)
+- FreeBSD: [Install from source](Installing-from-source/FreeBSD.md)
 
 **Please note that the following distributions are NOT supported:**
 
 - Ubuntu 16.04 and older
 - Linux Mint 18.x and older
+- FreeBSD 12.3-RELEASE and older
 - Kali Linux
 - Parrot
 - BlackArch

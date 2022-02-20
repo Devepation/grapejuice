@@ -36,7 +36,7 @@ def go(parameters: UninstallationParameters):
     for file in manifest["files"]:
         file_path = Path(file)
 
-        if file_path.is_absolute():
+        if not file_path.is_absolute():
             o_file = file
             file_path = paths.home() / file
             LOG.info(f"Mended file path: {o_file} -> {file_path}")

@@ -11,7 +11,7 @@ following command:
 
 ```sh
 sudo eopkg it -c system.devel
-sudo eopkg install git python3-devel libcairo-devel
+sudo eopkg install git python3-devel libcairo-devel xdg-utils
 ```
 
 ## Installing Grapejuice

@@ -10,6 +10,10 @@ This page describes some of the ways to improve performance and reduce input lag
 
 ## Improving Roblox performance
 
+### Using Wayland
+
+Using Wayland with xwayland can sometimes improve performance.
+
 ### Change the renderer
 
 You can change the renderer by opening the Grapejuice app, selecting `Player` on the left, and then modifying the `Roblox Renderer` under `Graphics Settings`. Generally, you can try each one of them and seeing which one works best. If Roblox happens to not launch after the logo shows up, you can enable `Use Mesa OpenGL version override`.

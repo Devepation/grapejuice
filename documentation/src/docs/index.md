@@ -7,6 +7,11 @@ title: Documentation Home
  - GPU that supports OpenGL 4.0 or Vulkan (both of which are available on modern GPUs)
  - x86_64 GNU/Linux system with glibc or amd64 FreeBSD 13.0+ system
 
+While not required, the following setup is suggested:
+
+- Pipewire with pipewire-pulse to be able to use voice chat
+- Wayland with xwayland for better performance
+
 **Notice**: Grapejuice is currently not supported on ARM devices, such as a Raspberry Pi or Pinebook.
 
 ## 🚀 Installing Grapejuice

@@ -90,6 +90,10 @@ If you need to use the built-in screen recorder, follow the below steps:
 
 You need a patched version of Wine to solve this. See [this guide](Guides/Installing-Wine).
 
+## Voice chat doesn't work
+
+To use voice chat, you need to use Pipewire with pipewire-pulse.
+
 ## Desktop application is being used
 
 This is part of the [app beta](https://devforum.roblox.com/t/925069). If you'd like to opt-out, go to the Grapejuice UI,

@@ -52,6 +52,7 @@ title: Documentation Home
 - Funtoo: [Install from source](Installing-from-source/Gentoo-Linux-and-similar)
 - Sabayon: [Install from source](Installing-from-source/Gentoo-Linux-and-similar)
 - FreeBSD: [Install from source](Installing-from-source/FreeBSD.md)
+- Android: [Install from package](Installing-from-package/Android.md)
 
 **Please note that the following distributions are NOT supported:**
 

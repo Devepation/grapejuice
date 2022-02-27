@@ -25,6 +25,10 @@ def local_share() -> Path:
         return dot_local() / "share"
 
 
+def local_share_locale() -> Path:
+    return local_share() / "locale"
+
+
 def local_var() -> Path:
     return dot_local() / "var"
 
@@ -89,12 +93,22 @@ def assets_directory() -> Path:
 
 
 def locale_directory() -> Path:
-    for locale in (local_share() / "locale", Path("/usr/share/locale")):
+    locale_directory_candidates = [
+        local_share_locale(),
+        Path("/usr/share/locale")
+    ]
+
+    if "GRAPEJUICE_LOCALE_DIRECTORY" in os.environ:
+        user_locale_directory = Path(os.environ["GRAPEJUICE_LOCALE_DIRECTORY"]).resolve()
+        locale_directory_candidates.insert(0, user_locale_directory)
+
+    for locale in locale_directory_candidates:
         has_mo_files = bool(next(locale.glob("*/LC_MESSAGES/grapejuice.mo"), False))
+
         if has_mo_files:
             return locale
 
-    raise RuntimeError("Could not find Grapejuice's mo files")
+    raise RuntimeError("Could not find a suitable locale directory that contains Grapejuice's mo files")
 
 
 def po_directory() -> Path:

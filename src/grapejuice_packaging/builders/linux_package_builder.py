@@ -12,6 +12,7 @@ from string import Template
 import grapejuice.__about__ as about
 import grapejuice_packaging.packaging_resources as res
 from grapejuice_common import paths
+from grapejuice_common.util import mo_util
 from grapejuice_packaging.builders.package_builder import PackageBuilder
 from grapejuice_packaging.util.task_sequence import TaskSequence
 
@@ -62,17 +63,10 @@ def _build_package(configuration: LinuxPackageConfiguration):
 
     @build.task("Compile mo files")
     def compile_mo_files(log):
-        locale = Path(root, configuration.level_1_directory, "share", "locale")
-        log.info(f"Using locale: {locale}")
+        locale_directory = Path(root, configuration.level_1_directory, "share", "locale")
+        log.info(f"Using locale directory: {locale_directory}")
 
-        linguas_file = paths.po_directory() / "LINGUAS"
-        with linguas_file.open("r") as linguas:
-            for language in linguas:
-                language = language.strip()
-                po_file = paths.po_directory() / f"{language}.po"
-                mo_file = locale / language / "LC_MESSAGES" / "grapejuice.mo"
-                os.makedirs(mo_file.parent, exist_ok=True)
-                subprocess.check_call(["msgfmt", str(po_file), "-o", str(mo_file)])
+        mo_util.compile_mo_files(locale_directory)
 
     @build.task("Copy MIME files")
     def mime_files(log):

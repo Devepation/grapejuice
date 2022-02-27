@@ -1,3 +1,5 @@
+from gettext import gettext as _
+
 from gi.repository import Gtk
 
 from grapejuice_common.gtk.components.grape_list_box_row_with_icon import GrapeListBoxRowWithIcon
@@ -46,7 +48,7 @@ class GrapeStartUsingGrapejuiceRow(GrapeListBoxRowWithIcon):
         super().__init__(*args, icon_name="user-home-symbolic", **kwargs)
 
         label = Gtk.Label()
-        label.set_text("Start")
+        label.set_text(_("Start"))
 
         self.box.add(label)
 

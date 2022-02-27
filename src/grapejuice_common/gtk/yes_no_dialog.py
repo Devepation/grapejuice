@@ -1,4 +1,6 @@
-def yes_no_dialog(title: str = "Untitled Dialog", message="This is a message"):
+from gettext import gettext as _
+
+def yes_no_dialog(title: str = _("Untitled Dialog"), message=_("This is a message")):
     from gi.repository import Gtk
 
     # Prepare message, it can be no more than 80 columns wide

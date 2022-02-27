@@ -1,4 +1,5 @@
 from typing import List, Optional
+from gettext import gettext as _
 
 from gi.repository import Gtk
 
@@ -91,7 +92,7 @@ class BackgroundTaskHelper:
 
         if any_tasks_running:
             self._widgets.background_task_popover_status_label.set_text(
-                f"Grapejuice is running {background.tasks.count} background tasks"
+                _("Grapejuice is running {count} background tasks").format(count=background.tasks.count)
             )
 
             primary_task = background.tasks.primary_task

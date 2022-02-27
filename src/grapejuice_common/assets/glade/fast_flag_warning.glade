@@ -117,7 +117,7 @@ Changing any fast flags, may lead to data corruption and unstable behaviour of R
             </child>
             <child>
               <object class="GtkLinkButton" id="devforum_link">
-                <property name="label" translatable="yes">button</property>
+                <property name="label" translatable="yes">Read more on the Roblox Developer forum</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>

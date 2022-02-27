@@ -85,6 +85,7 @@ Another way, and better way is to use `package.use` instead of manually adding t
 ## Installing dependencies for Grapejuice
 Grapejuice requires several native dependencies for the user interface, plus you'll need git for cloning the source repository. Without these dependencies, Grapejuice will not function properly. The full list of dependencies is:
 
+- sys-devel/gettext
 - dev-vcs/git
 - dev-python/pip
 - x11-libs/cairo
@@ -99,7 +100,7 @@ Grapejuice requires several native dependencies for the user interface, plus you
 
 If you want to install them all at once, you can make use of this handy command:
 ```sh
-sudo emerge --ask dev-vcs/git dev-python/pip x11-libs/cairo x11-libs/gtk+ dev-libs/gobject-introspection dev-util/desktop-file-utils x11-misc/xdg-utils x11-misc/xdg-user-dirs dev-util/gtk-update-icon-cache x11-misc/shared-mime-info x11-apps/mesa-progs
+sudo emerge --ask sys-devel/gettext dev-vcs/git dev-python/pip x11-libs/cairo x11-libs/gtk+ dev-libs/gobject-introspection dev-util/desktop-file-utils x11-misc/xdg-utils x11-misc/xdg-user-dirs dev-util/gtk-update-icon-cache x11-misc/shared-mime-info x11-apps/mesa-progs
 ```
 
 ## Installing Grapejuice

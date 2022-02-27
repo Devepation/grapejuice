@@ -1,5 +1,6 @@
 import logging
 from dataclasses import dataclass
+from gettext import gettext as _
 from typing import Optional
 
 from grapejuice_common.gtk.components.grape_setting import GrapeSetting
@@ -20,15 +21,15 @@ log = logging.getLogger(__name__)
 def _app_hints(prefix: Wineprefix) -> GrapeSettingsGroup:
     product_map = {
         RobloxProduct.app: {
-            "display_name": "Desktop App",
+            "display_name": _("Desktop App"),
             "hint": WineprefixHint.app
         },
         RobloxProduct.studio: {
-            "display_name": "Studio",
+            "display_name": _("Studio"),
             "hint": WineprefixHint.studio
         },
         RobloxProduct.player: {
-            "display_name": "Experience Player",
+            "display_name": _("Experience Player"),
             "hint": WineprefixHint.player
         }
     }
@@ -43,10 +44,10 @@ def _app_hints(prefix: Wineprefix) -> GrapeSettingsGroup:
         )
 
     return GrapeSettingsGroup(
-        title="Application Hints",
-        description="Grapejuice uses application hints to determine which prefix should be used to launch a Roblox "
+        title=_("Application Hints"),
+        description=_("Grapejuice uses application hints to determine which prefix should be used to launch a Roblox "
                     "application. If you toggle the hint for a Roblox application on for this prefix, Grapejuice will "
-                    "use this prefix for that application.",
+                    "use this prefix for that application."),
         settings=list(map(map_product, iter(RobloxProduct)))
     )
 
@@ -60,7 +61,7 @@ def _graphics_settings(prefix: Wineprefix) -> Optional[GrapeSettingsGroup]:
     def _renderer_setting():
         return GrapeSetting(
             key="roblox_renderer",
-            display_name="Roblox Renderer",
+            display_name=_("Roblox Renderer"),
             value_type=RobloxRenderer,
             value=_get_renderer()
         )
@@ -86,12 +87,12 @@ def _graphics_settings(prefix: Wineprefix) -> Optional[GrapeSettingsGroup]:
         return [
             GrapeSetting(
                 key="should_prime",
-                display_name="Use PRIME offloading",
+                display_name=_("Use PRIME offloading"),
                 value=profile.should_prime
             ),
             GrapeSetting(
                 key="prime_offload_sink",
-                display_name="PRIME offload sink",
+                display_name=_("PRIME offload sink"),
                 value_type=provider_list,
                 value=provider_list,
                 __list_index__=provider_index
@@ -101,7 +102,7 @@ def _graphics_settings(prefix: Wineprefix) -> Optional[GrapeSettingsGroup]:
     def _mesa_gl_override():
         return GrapeSetting(
             key="use_mesa_gl_override",
-            display_name="Use Mesa OpenGL version override",
+            display_name=_("Use Mesa OpenGL version override"),
             value=prefix.configuration.use_mesa_gl_override
         )
 
@@ -118,27 +119,27 @@ def _graphics_settings(prefix: Wineprefix) -> Optional[GrapeSettingsGroup]:
         return None
 
     return GrapeSettingsGroup(
-        title="Graphics Settings",
-        description="Grapejuice can assist with graphics performance in Roblox. These are the settings that control "
-                    "Grapejuice's graphics acceleration features.",
+        title=_("Graphics Settings"),
+        description=_("Grapejuice can assist with graphics performance in Roblox. These are the settings that control "
+                    "Grapejuice's graphics acceleration features."),
         settings=settings
     )
 
 
 def _wine_debug_settings(prefix: Wineprefix):
     return GrapeSettingsGroup(
-        title="Wine debugging settings",
-        description="Wine has an array of debugging options that can be used to improve wine. Some of them can cause "
-                    "issues, be careful!",
+        title=_("Wine debugging settings"),
+        description=_("Wine has an array of debugging options that can be used to improve wine. Some of them can cause "
+                    "issues, be careful!"),
         settings=[
             GrapeSetting(
                 key="enable_winedebug",
-                display_name="Enable Wine debugging",
+                display_name=_("Enable Wine debugging"),
                 value=prefix.configuration.enable_winedebug,
             ),
             GrapeSetting(
                 key="winedebug_string",
-                display_name="WINEDEBUG string",
+                display_name=_("WINEDEBUG string"),
                 value=prefix.configuration.winedebug_string
             )
         ]
@@ -147,18 +148,18 @@ def _wine_debug_settings(prefix: Wineprefix):
 
 def _third_party(prefix: Wineprefix):
     return GrapeSettingsGroup(
-        title="Third party application integrations",
-        description="Grapejuice can assist in installing third party tools that will improve the Roblox experience",
+        title=_("Third party application integrations"),
+        description=_("Grapejuice can assist in installing third party tools that will improve the Roblox experience"),
         settings=[
             GrapeSetting(
                 key=ThirdPartyKeys.fps_unlocker,
-                display_name="Use Roblox FPS Unlocker",
+                display_name=_("Use Roblox FPS Unlocker"),
                 value_type=bool,
                 value=prefix.configuration.third_party.get(ThirdPartyKeys.fps_unlocker, False)
             ),
             GrapeSetting(
                 key=ThirdPartyKeys.dxvk,
-                display_name="Use DXVK D3D implementation",
+                display_name=_("Use DXVK D3D implementation"),
                 value=prefix.configuration.third_party.get(ThirdPartyKeys.dxvk, False)
             )
         ]

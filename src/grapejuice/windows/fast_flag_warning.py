@@ -15,7 +15,6 @@ class FastFlagWarning(GtkBase):
         self._do_continue = False
         self._callback = callback
 
-        self.devforum_link.set_label("Read more on the Roblox Developer forum")
         self.warn_check.set_active(current_settings.get(settings.k_show_fast_flag_warning))
 
     @property

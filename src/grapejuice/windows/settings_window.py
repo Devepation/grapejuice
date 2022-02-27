@@ -1,4 +1,5 @@
 import logging
+from gettext import gettext as _
 from typing import Optional
 
 from gi.repository import Gtk
@@ -40,22 +41,22 @@ def _do_reinstall_grapejuice():
 def _do_uninstall_grapejuice():
     log = logging.getLogger("settings/uninstall")
 
-    do_it = yes_no_dialog("Uninstall Grapejuice", "Are you sure that you want to uninstall Grapejuice?")
+    do_it = yes_no_dialog(_("Uninstall Grapejuice"), _("Are you sure that you want to uninstall Grapejuice?"))
     if not do_it:
         return
 
     parameters = UninstallationParameters(
         remove_prefix=yes_no_dialog(
-            title="Remove Wineprefixes?",
-            message="Do you want to remove all the Wineprefixes Grapejuice has created? Doing this will permanently "
+            title=_("Remove Wineprefixes?"),
+            message=_("Do you want to remove all the Wineprefixes Grapejuice has created? Doing this will permanently "
                     "remove all Roblox program files from this machine. If you have stored Roblox experiences or "
-                    "models inside of a Wineprefix, these will be deleted as well. "
+                    "models inside of a Wineprefix, these will be deleted as well. ")
         ),
         for_reals=True
     )
 
     try:
-        dialog("Grapejuice will now uninstall itself, the program will close when the process is finished.")
+        dialog(_("Grapejuice will now uninstall itself, the program will close when the process is finished."))
         uninstall.go(parameters)
 
     except Exception as e:
@@ -70,26 +71,26 @@ def _install_actions():
         return None
 
     return GrapeSettingsGroup(
-        title="Installation Actions",
-        description="Manage your Grapejuice installation",
+        title=_("Installation Actions"),
+        description=_("Manage your Grapejuice installation"),
         settings=[
             GrapeSetting(
                 key="re-install",
-                display_name="Re-install",
-                description="Performing this action will re-install Grapejuice.",
+                display_name=_("Re-install"),
+                description=_("Performing this action will re-install Grapejuice."),
                 value=GrapeSettingAction(
                     key="re-install",
-                    display_name="Re-install",
+                    display_name=_("Re-install"),
                     action=lambda *_: _do_reinstall_grapejuice()
                 ),
             ),
             GrapeSetting(
                 key="uninstall",
-                display_name="Uninstall",
-                description="Completely remove Grapejuice from your system!",
+                display_name=_("Uninstall"),
+                description=_("Completely remove Grapejuice from your system!"),
                 value=GrapeSettingAction(
                     key="uninstall",
-                    display_name="Uninstall",
+                    display_name=_("Uninstall"),
                     action=lambda *_: _do_uninstall_grapejuice()
                 ),
             )
@@ -102,30 +103,30 @@ def _general_settings():
         _from_user_settings(
             key="show_fast_flag_warning",
             default_value=True,
-            display_name="Show Fast Flag Warning",
-            description="Should Grapejuice warn you when opening the Fast Flag Editor?"
+            display_name=_("Show Fast Flag Warning"),
+            description=_("Should Grapejuice warn you when opening the Fast Flag Editor?")
         ),
         _from_user_settings(
             key="no_daemon_mode",
             default_value=True,
-            display_name="Use Grapejuice daemon",
-            description="Enable or Disable the Grapejuice Daemon. This is an advanced debugging feature only "
-                        "meant for people who work on Wine itself.",
+            display_name=_("Use Grapejuice daemon"),
+            description=_("Enable or Disable the Grapejuice Daemon. This is an advanced debugging feature only "
+                        "meant for people who work on Wine itself."),
             bidirectional_transformer=lambda b: not b
         ),
         _from_user_settings(
             key="ignore_wine_version",
             default_value=False,
-            display_name="Ignore Wine version"
+            display_name=_("Ignore Wine version")
         ),
         _from_user_settings(
             key="try_profiling_hardware",
             default_value=True,
-            display_name="Try profiling hardware",
-            description="When this setting is enabled, Grapejuice will try profiling your hardware on startup. This "
+            display_name=_("Try profiling hardware"),
+            description=_("When this setting is enabled, Grapejuice will try profiling your hardware on startup. This "
                         "profiling step only happens when the hardware profile is not set or when the current "
                         "hardware does not match the previously profiled hardware. This setting is automatically "
-                        "disabled if hardware profiling fails."
+                        "disabled if hardware profiling fails.")
         )
     ]
 
@@ -134,21 +135,21 @@ def _general_settings():
             _from_user_settings(
                 key="disable_updates",
                 default_value=False,
-                display_name="Disable self-updater"
+                display_name=_("Disable self-updater")
             ),
 
             _from_user_settings(
                 key="release_channel",
                 default_value="master",
-                display_name="Release Channel",
-                description="Determines from which branch Grapejuice should be updated. This only works for source "
-                            "installs. "
+                display_name=_("Release Channel"),
+                description=_("Determines from which branch Grapejuice should be updated. This only works for source "
+                            "installs.")
             )
         ]
 
     return GrapeSettingsGroup(
-        title="General",
-        description="These are general Grapejuice settings",
+        title=_("General"),
+        description=_("These are general Grapejuice settings"),
         settings=settings
     )
 

@@ -90,6 +90,7 @@ class GtkBase:
     def _create_builder(self) -> Optional[Gtk.Builder]:
         if self._glade_path is not None:
             builder = Gtk.Builder()
+            builder.set_translation_domain("grapejuice")
             builder.add_from_file(str(self._glade_path))
 
             return builder

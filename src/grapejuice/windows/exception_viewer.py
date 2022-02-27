@@ -1,6 +1,7 @@
 import logging
 import uuid
 from dataclasses import dataclass, field
+from gettext import gettext as _
 from itertools import chain
 from pathlib import Path
 from typing import List, Optional, Iterable, Dict
@@ -83,8 +84,8 @@ class ExceptionViewer(GtkBase):
 
         self._make_tracebacks()
 
-        single = "Grapejuice has run into a problem! Please check the details below."
-        multiple = "Grapejuice has run into multiple problems! Please check the details below."
+        single = _("Grapejuice has run into a problem! Please check the details below.")
+        multiple = _("Grapejuice has run into multiple problems! Please check the details below.")
         self.widgets.problem_intro.set_text(single if len(self._exceptions) <= 1 else multiple)
 
         self._paginator = Paginator(collection=self._exceptions, page_size=1)
@@ -127,7 +128,7 @@ class ExceptionViewer(GtkBase):
     @handler
     def export_tracebacks(self, _button):
         dialog = Gtk.FileChooserDialog(
-            title="Export error details",
+            title=_("Export error details"),
             parent=self.root_widget,
             action=Gtk.FileChooserAction.SAVE
         )
@@ -160,12 +161,12 @@ class ExceptionViewer(GtkBase):
 
         if path.exists():
             accept_overwrite = yes_no_dialog(
-                title="File exists",
-                message=f"The file '{path}' already exists, are you sure you want to overwrite it?"
+                title=_("File exists"),
+                message=_("The file '{path}' already exists, are you sure you want to overwrite it?").format(path=path)
             )
 
             if not accept_overwrite:
-                dialog(f"Canceled write to '{path}' because the file already exists.")
+                dialog(_("Canceled write to '{path}' because the file already exists.").format(path=path))
                 return
 
             log.info(f"User accepted file overwrite of {path}")
@@ -182,7 +183,7 @@ class ExceptionViewer(GtkBase):
             with path.open("w+", encoding=variables.text_encoding()) as fp:
                 fp.write(tb_string)
 
-            dialog(f"Successfully saved error information to {path}")
+            dialog(_("Successfully saved error information to {path}").format(path=path))
 
         except Exception as e:
             # Can't catch a break

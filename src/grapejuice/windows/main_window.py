@@ -1,5 +1,6 @@
 import shutil
 import time
+from gettext import gettext as _
 from typing import Optional, List
 
 from gi.repository import Gtk
@@ -80,7 +81,7 @@ def _check_for_updates(
 
     class CheckForUpdates(background.BackgroundTask):
         def __init__(self, **kwargs):
-            super().__init__("Checking for a newer version of Grapejuice", **kwargs)
+            super().__init__(_("Checking for a newer version of Grapejuice"), **kwargs)
 
         def work(self) -> None:
             show_button = False
@@ -90,16 +91,16 @@ def _check_for_updates(
 
             if update_available:
                 show_button = True
-                update_status = "This version of Grapejuice is out of date."
+                update_status = _("This version of Grapejuice is out of date.")
                 update_info = f"{update_provider.local_version()} -> {update_provider.target_version()}"
 
             else:
                 if update_provider.local_is_newer():
-                    update_status = "This version of Grapejuice is from the future"
+                    update_status = _("This version of Grapejuice is from the future")
                     update_info = f"\n{update_provider.local_version()}"
 
                 else:
-                    update_status = "Grapejuice is up to date"
+                    update_status = _("Grapejuice is up to date")
                     update_info = str(update_provider.local_version())
 
             if not update_provider.can_update():
@@ -263,18 +264,18 @@ class MainWindow(GtkBase):
         window.show()
 
     @handler
-    def update_grapejuice(self, *_):
+    def update_grapejuice(self, *_args):
         from grapejuice_common.update_info_providers import guess_relevant_provider
 
         update_provider = guess_relevant_provider()
         if not update_provider.can_update():
-            dialog("This installation of grapejuice does not support updating itself.")
+            dialog(_("This installation of grapejuice does not support updating itself."))
             return
 
-        dialog(
+        dialog(_(
             "Grapejuice will now update, the application will re-open after the process has finished.\n"
             "If however, the application does not re-open, you might have to redo your source install."
-        )
+        ))
 
         gui_task_manager.run_task_once(PerformUpdate, update_provider, True)
 
@@ -376,8 +377,8 @@ class MainWindow(GtkBase):
         model = self._current_prefix_model
 
         do_delete = yes_no_dialog(
-            "Delete Wineprefix",
-            f"Do you really want to delete the Wineprefix '{model.display_name}'?"
+            _("Delete Wineprefix"),
+            _("Do you really want to delete the Wineprefix '{prefix}'?").format(prefix=model.display_name)
         )
 
         if do_delete:
@@ -462,7 +463,7 @@ class MainWindow(GtkBase):
             n = 1
 
             while model.exists_on_disk:
-                model.display_name = f"New Wineprefix - {n}"
+                model.display_name = _("New Wineprefix - {n}").format(n=n)
                 model.create_name_on_disk_from_display_name()
 
                 n += 1

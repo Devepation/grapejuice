@@ -1,3 +1,4 @@
+from gettext import gettext as _
 from typing import Optional, List
 
 from grapejuice_common import paths
@@ -36,7 +37,7 @@ class GtkPaginator(GtkBase):
         if self._model:
             return f"{self._model.current_page_index + 1}/{self._model.n_pages}"
 
-        return "No model"
+        return _("No model")
 
     def _on_model_paged(self):
         self.widgets.paginator_label.set_text(self._label_text)

@@ -68,7 +68,7 @@ class OpenLogsDirectory(background.BackgroundTask):
         path = paths.logging_directory()
         path.mkdir(parents=True, exist_ok=True)
 
-        subprocess.check_call(["xdg-open", str(path)])
+        xdg_open(path)
 
 
 class OpenConfigFile(background.BackgroundTask):
@@ -76,7 +76,7 @@ class OpenConfigFile(background.BackgroundTask):
         super().__init__(_("Opening configuration file"), **kwargs)
 
     def work(self) -> None:
-        subprocess.check_call(["xdg-open", str(paths.grapejuice_user_settings())])
+        xdg_open(paths.grapejuice_user_settings())
 
 
 class PerformUpdate(background.BackgroundTask):

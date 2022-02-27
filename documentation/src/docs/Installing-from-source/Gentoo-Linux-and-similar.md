@@ -88,7 +88,7 @@ Grapejuice requires several native dependencies for the user interface, plus you
 - dev-vcs/git
 - dev-python/pip
 - x11-libs/cairo
-- dev-libs/gtk+
+- x11-libs/gtk+
 - dev-libs/gobject-introspection
 - dev-util/desktop-file-utils
 - x11-misc/xdg-utils
@@ -99,7 +99,7 @@ Grapejuice requires several native dependencies for the user interface, plus you
 
 If you want to install them all at once, you can make use of this handy command:
 ```sh
-sudo emerge --ask dev-vcs/git dev-python/pip x11-libs/cairo dev-libs/gtk+ dev-libs/gobject-introspection dev-util/desktop-file-utils x11-misc/xdg-utils x11-misc/xdg-user-dirs dev-util/gtk-update-icon-cache x11-misc/shared-mime-info x11-apps/mesa-progs
+sudo emerge --ask dev-vcs/git dev-python/pip x11-libs/cairo x11-libs/gtk+ dev-libs/gobject-introspection dev-util/desktop-file-utils x11-misc/xdg-utils x11-misc/xdg-user-dirs dev-util/gtk-update-icon-cache x11-misc/shared-mime-info x11-apps/mesa-progs
 ```
 
 ## Installing Grapejuice
@@ -124,7 +124,7 @@ Once Grapejuice has been installed, you can proceed to the section below.
 **You will need to install Wine before you can use Grapejuice**.
 It's recommended to install the patched wine version. Not installing it can lead to crashes, or the in-game cursor not moving properly.
 See [this guide](../Guides/Installing-Wine) for instructions on installing the patched Wine build.
-**Make sure you have installed Wine with `dnf` first, otherwise Grapejuice might tell you the Wine binary does not exist**.
+**Make sure you have installed Wine with `emerge` first, otherwise Grapejuice might tell you the Wine binary does not exist**.
 
 ## 🤔 Still having issues?
 

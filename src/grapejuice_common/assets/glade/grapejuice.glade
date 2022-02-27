@@ -234,8 +234,12 @@ Author: BrinkerVII <brinkervii@gmail.com>
   <object class="GtkBox" id="cc_start_page">
     <property name="visible">True</property>
     <property name="can-focus">False</property>
+    <property name="halign">center</property>
+    <property name="valign">center</property>
     <property name="margin-top">25</property>
     <property name="margin-bottom">25</property>
+    <property name="hexpand">True</property>
+    <property name="vexpand">True</property>
     <property name="orientation">vertical</property>
     <child>
       <object class="GtkImage">

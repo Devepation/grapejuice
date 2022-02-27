@@ -6,7 +6,7 @@ Grapejuice requires a set of libraries to be installed and to be run. These depe
 following command:
 
 ```sh
-sudo xbps-install -S python3 python3-pip python3-wheel python3-setuptools python3-cairo python3-gobject cairo-devel desktop-file-utils xdg-user-dirs xdg-utils gtk-update-icon-cache shared-mime-info pkg-config gobject-introspection
+sudo xbps-install -S gettext python3 python3-pip python3-wheel python3-setuptools python3-cairo python3-gobject cairo-devel desktop-file-utils xdg-user-dirs xdg-utils gtk-update-icon-cache shared-mime-info pkg-config gobject-introspection
 ```
 
 ## Installing Grapejuice

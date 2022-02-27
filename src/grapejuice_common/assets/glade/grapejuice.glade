@@ -305,7 +305,7 @@ Author: BrinkerVII <brinkervii@gmail.com>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
         </child>
@@ -325,7 +325,7 @@ Author: BrinkerVII <brinkervii@gmail.com>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="fill">True</property>
             <property name="position">1</property>
           </packing>
         </child>
@@ -345,7 +345,7 @@ Author: BrinkerVII <brinkervii@gmail.com>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="fill">True</property>
             <property name="position">2</property>
           </packing>
         </child>
@@ -462,6 +462,7 @@ Author: BrinkerVII <brinkervii@gmail.com>
     <property name="icon-name">grapejuice</property>
     <child>
       <object class="GtkPaned">
+        <property name="width-request">1000</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>
         <property name="position">175</property>
@@ -495,8 +496,6 @@ Author: BrinkerVII <brinkervii@gmail.com>
         </child>
         <child>
           <object class="GtkBox" id="page_wrapper">
-            <property name="width-request">500</property>
-            <property name="height-request">400</property>
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="margin-start">15</property>

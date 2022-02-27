@@ -17,6 +17,7 @@ sudo pkg upgrade
 Grapejuice requires several native dependencies for the user interface, plus you'll need git for cloning the source repository. Without these dependencies, Grapejuice will not function properly. The full list of dependencies is:
 
 - python38
+- gettext
 - git
 - py38-pip
 - cairo
@@ -30,7 +31,7 @@ Grapejuice requires several native dependencies for the user interface, plus you
 
 If you want to install them all at once, you can make use of this handy command:
 ```sh
-sudo pkg install git py38-pip cairo gtk3 gobject-introspection desktop-file-utils xdg-utils xdg-user-dirs gtk-update-icon-cache shared-mime-info python38
+sudo pkg install gettext git py38-pip cairo gtk3 gobject-introspection desktop-file-utils xdg-utils xdg-user-dirs gtk-update-icon-cache shared-mime-info python38
 ```
 
 ## Installing Grapejuice

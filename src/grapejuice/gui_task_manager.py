@@ -1,3 +1,4 @@
+from gettext import gettext as _
 from typing import Optional
 
 from grapejuice import background
@@ -8,7 +9,7 @@ once_task_tracker = dict()
 
 
 def _generic_already_running():
-    dialog("This task is already being performed!")
+    dialog(_("This task is already being performed!"))
 
 
 def run_task_once(

@@ -1,4 +1,7 @@
+import locale
 import logging
+import re
+from gettext import gettext as _
 
 import click
 
@@ -137,27 +140,26 @@ def first_time_setup():
 def uninstall():
     from grapejuice_common import uninstall as uninstall_module
 
-    uninstall_grapejuice_response = input(
-        "Are you sure you want to uninstall grapejuice? [y/N] "
-    ).strip().lower()
+    yes_ptn = re.compile(locale.nl_langinfo(locale.YESEXPR))
+    no_ptn = re.compile(locale.nl_langinfo(locale.NOEXPR))
 
-    uninstall_grapejuice = (uninstall_grapejuice_response[0] == "y") if uninstall_grapejuice_response else False
+    uninstall_grapejuice_response = input(_("Are you sure you want to uninstall grapejuice? [y/N] ")).strip()
+    uninstall_grapejuice = yes_ptn.match(uninstall_grapejuice_response) is not None  # Check if user said yes
 
     if uninstall_grapejuice:
-        delete_prefix_response = input(
-            "Remove the Wineprefixes that contain your installations of Roblox? This will cause all "
-            "configurations for Roblox to be permanently deleted! [n/Y] "
-        ).strip().lower()
-
-        delete_prefix = (delete_prefix_response[0] == "y") if delete_prefix_response else False
+        delete_prefix_response = input(_(
+            "Remove the Wineprefixes that contain your installations of Roblox? "
+            "This will cause all configurations for Roblox to be permanently deleted! [n/Y] "
+        )).strip()
+        delete_prefix = no_ptn.match(delete_prefix_response) is None  # Check if user didn't say no
 
         params = uninstall_module.UninstallationParameters(delete_prefix, for_reals=True)
         uninstall_module.go(params)
 
-        print("Grapejuice has been uninstalled, have a nice day!")
+        print(_("Grapejuice has been uninstalled, have a nice day!"))
 
     else:
-        print("Uninstallation aborted")
+        print(_("Uninstallation aborted"))
 
 
 @cli.command()

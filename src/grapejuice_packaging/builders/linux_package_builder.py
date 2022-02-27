@@ -60,6 +60,20 @@ def _build_package(configuration: LinuxPackageConfiguration):
                 "--target", str(python_site)
             ])
 
+    @build.task("Compile mo files")
+    def compile_mo_files(log):
+        locale = Path(root, configuration.level_1_directory, "share", "locale")
+        log.info(f"Using locale: {locale}")
+
+        linguas_file = paths.po_directory() / "LINGUAS"
+        with linguas_file.open("r") as linguas:
+            for language in linguas:
+                language = language.strip()
+                po_file = paths.po_directory() / f"{language}.po"
+                mo_file = locale / language / "LC_MESSAGES" / "grapejuice.mo"
+                os.makedirs(mo_file.parent, exist_ok=True)
+                subprocess.check_call(["msgfmt", str(po_file), "-o", str(mo_file)])
+
     @build.task("Copy MIME files")
     def mime_files(log):
         mime_packages = Path(root, configuration.level_1_directory, "share", "mime", "packages")

@@ -88,6 +88,19 @@ def assets_directory() -> Path:
     raise RuntimeError("Could not find assets directory")
 
 
+def locale_directory() -> Path:
+    for locale in (local_share() / "locale", Path("/usr/share/locale")):
+        has_mo_files = bool(next(locale.glob("*/LC_MESSAGES/grapejuice.mo"), False))
+        if has_mo_files:
+            return locale
+
+    raise RuntimeError("Could not find Grapejuice's mo files")
+
+
+def po_directory() -> Path:
+    return assets_directory() / "po"
+
+
 def desktop_assets_directory() -> Path:
     return assets_directory() / "desktop"
 

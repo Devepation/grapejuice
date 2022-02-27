@@ -1,4 +1,5 @@
 import os
+from gettext import gettext as _
 from typing import Dict, Optional, List
 
 from grapejuice.components.fast_flag_components import GrapeFastFlagRow
@@ -96,9 +97,9 @@ class FastFlagEditor(GtkBase):
         self._roblox_product_menu = GrapeEnumMenu(
             RobloxProduct,
             display_strings={
-                RobloxProduct.player: "Roblox Player",
-                RobloxProduct.studio: "Roblox Studio",
-                RobloxProduct.app: "Roblox App"
+                RobloxProduct.player: _("Roblox Player"),
+                RobloxProduct.studio: _("Roblox Studio"),
+                RobloxProduct.app: _("Roblox App")
             },
             active_enum=self._selected_product
         )
@@ -112,7 +113,9 @@ class FastFlagEditor(GtkBase):
 
         self.widgets.header_widgets.add(self._roblox_product_menu)
 
-        self.widgets.fast_flag_editor_header.set_subtitle(f"Prefix: {self._target_prefix.configuration.display_name}")
+        self.widgets.fast_flag_editor_header.set_subtitle(
+            _("Prefix: {prefix}").format(prefix=self._target_prefix.configuration.display_name)
+        )
 
     def _on_selected_product_changed(self, product: RobloxProduct):
         self._selected_product = product

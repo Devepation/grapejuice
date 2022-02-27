@@ -51,6 +51,8 @@ def main():
         packages=find_packages("src", exclude=[
             "grapejuice_packaging",
             "grapejuice_packaging.*",
+            "grapejuice_dev_tools",
+            "grapejuice_dev_tools.*",
             "tests",
             "tests.*"
         ]),

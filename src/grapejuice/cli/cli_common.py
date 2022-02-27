@@ -27,7 +27,14 @@ def common_prepare():
     locale.setlocale(locale.LC_ALL, "")
 
     from grapejuice_common.logs import log_config
+
     log_config.configure_logging("grapejuice")
+
+    # List out startup info
+    # Has to be done after configure_logging to avoid load order conflicts
+    import logging
+    log = logging.getLogger("common_prepare")
+    log.info(f"Using locale directory {locale_directory}")
 
     from grapejuice_common.features.settings import current_settings
 

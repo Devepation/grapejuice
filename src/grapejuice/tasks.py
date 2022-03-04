@@ -81,7 +81,7 @@ class OpenConfigFile(background.BackgroundTask):
 
 class PerformUpdate(background.BackgroundTask):
     def __init__(self, update_provider: UpdateInformationProvider, reopen: bool = False, **kwargs):
-        super().__init__(name=_("Performing Update"), **kwargs)
+        super().__init__(name=_("Performing update"), **kwargs)
         self._update_provider = update_provider
         self._reopen = reopen
 
@@ -121,7 +121,7 @@ class ShowDriveC(background.BackgroundTask):
 
 class SignIntoStudio(background.BackgroundTask):
     def __init__(self, **kwargs):
-        super().__init__(_("Opening Studio Sign-in page"), **kwargs)
+        super().__init__(_("Opening Studio's sign-in page"), **kwargs)
 
     def work(self):
         from grapejuice_common import variables

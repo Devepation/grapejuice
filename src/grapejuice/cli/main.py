@@ -143,7 +143,7 @@ def uninstall():
     yes_ptn = re.compile(locale.nl_langinfo(locale.YESEXPR))
     no_ptn = re.compile(locale.nl_langinfo(locale.NOEXPR))
 
-    uninstall_grapejuice_response = input(_("Are you sure you want to uninstall grapejuice? [y/N] ")).strip()
+    uninstall_grapejuice_response = input(_("Are you sure you want to uninstall Grapejuice? [y/N] ")).strip()
     uninstall_grapejuice = yes_ptn.match(uninstall_grapejuice_response) is not None  # Check if user said yes
 
     if uninstall_grapejuice:
@@ -156,7 +156,7 @@ def uninstall():
         params = uninstall_module.UninstallationParameters(delete_prefix, for_reals=True)
         uninstall_module.go(params)
 
-        print(_("Grapejuice has been uninstalled, have a nice day!"))
+        print(_("Grapejuice has been uninstalled. Have a nice day!"))
 
     else:
         print(_("Uninstallation aborted"))

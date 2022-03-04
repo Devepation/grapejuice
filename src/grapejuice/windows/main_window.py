@@ -269,12 +269,12 @@ class MainWindow(GtkBase):
 
         update_provider = guess_relevant_provider()
         if not update_provider.can_update():
-            dialog(_("This installation of grapejuice does not support updating itself."))
+            dialog(_("This installation of Grapejuice does not support updating itself."))
             return
 
         dialog(_(
-            "Grapejuice will now update, the application will re-open after the process has finished.\n"
-            "If however, the application does not re-open, you might have to redo your source install."
+            "Grapejuice will now update and will re-open after the process has finished.\n"
+            "If Grapejuice does not re-open, you might have to redo your source install."
         ))
 
         gui_task_manager.run_task_once(PerformUpdate, update_provider, True)

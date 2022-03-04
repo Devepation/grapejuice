@@ -162,7 +162,7 @@ class ExceptionViewer(GtkBase):
         if path.exists():
             accept_overwrite = yes_no_dialog(
                 title=_("File exists"),
-                message=_("The file '{path}' already exists, are you sure you want to overwrite it?").format(path=path)
+                message=_("The file '{path}' already exists. Are you sure you want to overwrite it?").format(path=path)
             )
 
             if not accept_overwrite:

@@ -11,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/grapejuice/cli/main.py:147
-msgid "Are you sure you want to uninstall grapejuice? [y/N] "
+#: src/grapejuice/cli/main.py:146
+msgid "Are you sure you want to uninstall Grapejuice? [y/N] "
 msgstr "¿Está seguro de que lo quiere desinstalar Grapejuice? [s/N] "
 
-#: src/grapejuice/cli/main.py:153
+#: src/grapejuice/cli/main.py:151
 msgid ""
 "Remove the Wineprefixes that contain your installations of Roblox? This will "
 "cause all configurations for Roblox to be permanently deleted! [n/Y] "
@@ -23,11 +23,11 @@ msgstr ""
 "¿Eliminar los Wineprefixes con instalaciones de Roblox? ¡Esto eliminará la "
 "configuración de Roblox para siempre! [n/S] "
 
-#: src/grapejuice/cli/main.py:161
-msgid "Grapejuice has been uninstalled, have a nice day!"
+#: src/grapejuice/cli/main.py:159
+msgid "Grapejuice has been uninstalled. Have a nice day!"
 msgstr "Grapejuice ha sido desinstalado."
 
-#: src/grapejuice/cli/main.py:164
+#: src/grapejuice/cli/main.py:162
 msgid "Uninstallation aborted"
 msgstr "Desinstalación cancelada"
 
@@ -154,7 +154,7 @@ msgid "Opening configuration file"
 msgstr "Abriendo el archivo de configuración"
 
 #: src/grapejuice/tasks.py:84
-msgid "Performing Update"
+msgid "Performing update"
 msgstr "Actualizando"
 
 #: src/grapejuice/tasks.py:104
@@ -168,7 +168,7 @@ msgid "Opening Drive C in {prefix}"
 msgstr "Abriendo Disco C en {prefix}"
 
 #: src/grapejuice/tasks.py:124
-msgid "Opening Studio Sign-in page"
+msgid "Opening Studio's sign-in page"
 msgstr "Abriendo la página de inicio de sesión de Studio"
 
 #: src/grapejuice/tasks.py:154 src/grapejuice/tasks.py:171
@@ -219,7 +219,7 @@ msgstr "Archivo ya existe"
 #: src/grapejuice/windows/exception_viewer.py:165
 #, python-brace-format
 msgid ""
-"The file '{path}' already exists, are you sure you want to overwrite it?"
+"The file '{path}' already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "El archivo «{path}» ya existe, ¿está seguro de que lo quiere sobrescribir?"
 
@@ -267,15 +267,13 @@ msgid "Grapejuice is up to date"
 msgstr "Grapejuice está actualizado"
 
 #: src/grapejuice/windows/main_window.py:272
-msgid "This installation of grapejuice does not support updating itself."
+msgid "This installation of Grapejuice does not support updating itself."
 msgstr "Esta instalación de Grapejuice no puede actualizarse sola."
 
 #: src/grapejuice/windows/main_window.py:276
 msgid ""
-"Grapejuice will now update, the application will re-open after the process "
-"has finished.\n"
-"If however, the application does not re-open, you might have to redo your "
-"source install."
+"Grapejuice will now update and will re-open after the process has finished.\n"
+"If Grapejuice does not re-open, you might have to redo your source install."
 msgstr ""
 "Grapejuice ahora se actualizará. Se abrirá después de la actualización.\n"
 "Si Grapejuice no se abre, reinstale Grapejuice."
@@ -320,8 +318,8 @@ msgstr ""
 
 #: src/grapejuice/windows/settings_window.py:59
 msgid ""
-"Grapejuice will now uninstall itself, the program will close when the "
-"process is finished."
+"Grapejuice will now uninstall itself and will close when the process is "
+"finished."
 msgstr ""
 "Grapejuice ahora se va a desinstalar, el programa se va a cerrar cuando el "
 "proceso termine."
@@ -336,11 +334,11 @@ msgstr "Gestionar su instalación de Grapejuice"
 
 #: src/grapejuice/windows/settings_window.py:79
 #: src/grapejuice/windows/settings_window.py:83
-msgid "Re-install"
+msgid "Reinstall"
 msgstr "Reinstalar"
 
 #: src/grapejuice/windows/settings_window.py:80
-msgid "Performing this action will re-install Grapejuice."
+msgid "Performing this action will reinstall Grapejuice."
 msgstr "Realizar esta acción reinstalará Grapejuice."
 
 #: src/grapejuice/windows/settings_window.py:89
@@ -353,7 +351,7 @@ msgid "Completely remove Grapejuice from your system!"
 msgstr "¡Eliminar Grapejuice del sistema!"
 
 #: src/grapejuice/windows/settings_window.py:106
-msgid "Show Fast Flag Warning"
+msgid "Show Fast Flag warning"
 msgstr "Mostrar el adviso sobre Fast Flags"
 
 #: src/grapejuice/windows/settings_window.py:107
@@ -361,26 +359,26 @@ msgid "Should Grapejuice warn you when opening the Fast Flag Editor?"
 msgstr "¿Debería Grapejuice advertirle al abrir el Editor de Fast Flags?"
 
 #: src/grapejuice/windows/settings_window.py:112
-msgid "Use Grapejuice daemon"
+msgid "Use the Grapejuice daemon"
 msgstr "Usar el daemon de Grapejuice"
 
 #: src/grapejuice/windows/settings_window.py:113
 msgid ""
-"Enable or Disable the Grapejuice Daemon. This is an advanced debugging "
-"feature only meant for people who work on Wine itself."
+"This is an advanced debugging feature only meant for people who work on Wine "
+"itself."
 msgstr ""
 "Esta es una función de depuración destinada a las personas que trabajan en "
 "Wine."
 
-#: src/grapejuice/windows/settings_window.py:120
+#: src/grapejuice/windows/settings_window.py:119
 msgid "Ignore Wine version"
 msgstr "Ignorar la versión de Wine"
 
-#: src/grapejuice/windows/settings_window.py:125
+#: src/grapejuice/windows/settings_window.py:124
 msgid "Try profiling hardware"
 msgstr "Intentar perfilar hardware"
 
-#: src/grapejuice/windows/settings_window.py:126
+#: src/grapejuice/windows/settings_window.py:125
 msgid ""
 "When this setting is enabled, Grapejuice will try profiling your hardware on "
 "startup. This profiling step only happens when the hardware profile is not "
@@ -393,15 +391,15 @@ msgstr ""
 "anteriormente. Esta opción es desactivada automáticamente cuando el "
 "perfilamiento falla."
 
-#: src/grapejuice/windows/settings_window.py:138
+#: src/grapejuice/windows/settings_window.py:137
 msgid "Disable self-updater"
 msgstr "Desactivar autoactualizador"
 
-#: src/grapejuice/windows/settings_window.py:144
+#: src/grapejuice/windows/settings_window.py:143
 msgid "Release Channel"
 msgstr "Release Channel"
 
-#: src/grapejuice/windows/settings_window.py:145
+#: src/grapejuice/windows/settings_window.py:144
 msgid ""
 "Determines from which branch Grapejuice should be updated. This only works "
 "for source installs."
@@ -409,11 +407,11 @@ msgstr ""
 "Determina desde qué rama Grapejuice debe actualizarse. Esto solo funciona si "
 "Grapejuice fue instalado desde el código fuente."
 
-#: src/grapejuice/windows/settings_window.py:151
+#: src/grapejuice/windows/settings_window.py:150
 msgid "General"
 msgstr "General"
 
-#: src/grapejuice/windows/settings_window.py:152
+#: src/grapejuice/windows/settings_window.py:151
 msgid "These are general Grapejuice settings"
 msgstr "Estos son configuraciones generales de Grapejuice"
 
@@ -544,7 +542,7 @@ msgid "Grapejuice is running 0 tasks in the background"
 msgstr "Grapejuice está ejecutando 0 trabajos en el fondo"
 
 #: src/grapejuice_common/assets/glade/grapejuice.glade:81
-#: src/grapejuice_common/assets/glade/grapejuice.glade:370
+#: src/grapejuice_common/assets/glade/grapejuice.glade:374
 msgid "Off"
 msgstr "Apagado"
 
@@ -578,136 +576,136 @@ msgid "About Grapejuice"
 msgstr "Sobre Grapejuice"
 
 #: src/grapejuice_common/assets/glade/grapejuice.glade:176
-#: src/grapejuice_common/assets/glade/grapejuice.glade:334
+#: src/grapejuice_common/assets/glade/grapejuice.glade:338
 msgid "Documentation"
 msgstr "Documentación"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:257
+#: src/grapejuice_common/assets/glade/grapejuice.glade:261
 msgid "Grapejuice"
 msgstr "Grapejuice"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:294
+#: src/grapejuice_common/assets/glade/grapejuice.glade:298
 msgid "Sign in to Studio"
 msgstr "Iniciar sesión a Roblox Studio"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:314
+#: src/grapejuice_common/assets/glade/grapejuice.glade:318
 msgid "Open Roblox Studio"
 msgstr "Abrir Roblox Studio"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:373
+#: src/grapejuice_common/assets/glade/grapejuice.glade:377
 msgid "PRIME"
 msgstr "PRIME"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:376
+#: src/grapejuice_common/assets/glade/grapejuice.glade:380
 msgid "NVIDIA PRIME"
 msgstr "NVIDIA PRIME"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:379
+#: src/grapejuice_common/assets/glade/grapejuice.glade:383
 msgid "Optimus"
 msgstr "Optimus"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:390
+#: src/grapejuice_common/assets/glade/grapejuice.glade:394
 msgid "Let Roblox decide"
 msgstr "Dejar que Roblox decida"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:393
+#: src/grapejuice_common/assets/glade/grapejuice.glade:397
 msgid "Vulkan"
 msgstr "Vulkan"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:396
+#: src/grapejuice_common/assets/glade/grapejuice.glade:400
 msgid "OpenGL"
 msgstr "OpenGL"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:399
+#: src/grapejuice_common/assets/glade/grapejuice.glade:403
 msgid "DirectX 11"
 msgstr "DirectX 11"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:419
+#: src/grapejuice_common/assets/glade/grapejuice.glade:423
 msgid "A new version of Grapejuice is available"
 msgstr "Una nueva versión de Grapejuice está disponible"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:431
+#: src/grapejuice_common/assets/glade/grapejuice.glade:435
 msgid "0.0.0 -> 4.0.0"
 msgstr "0.0.0 -> 4.0.0"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:441
+#: src/grapejuice_common/assets/glade/grapejuice.glade:445
 msgid "Update now"
 msgstr "Actualizar ahora"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:588
+#: src/grapejuice_common/assets/glade/grapejuice.glade:592
 msgid "Grapejuice has run into some trouble. Click to see details."
 msgstr ""
 "Grapejuice se ha topado con un problema. Haz clic para ver los detalles."
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:639
+#: src/grapejuice_common/assets/glade/grapejuice.glade:643
 msgid "page0"
 msgstr "página0"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:647
+#: src/grapejuice_common/assets/glade/grapejuice.glade:651
 msgid "A"
 msgstr "A"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:651
+#: src/grapejuice_common/assets/glade/grapejuice.glade:655
 msgid "page1"
 msgstr "página1"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:660
+#: src/grapejuice_common/assets/glade/grapejuice.glade:664
 msgid "B"
 msgstr "B"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:664
+#: src/grapejuice_common/assets/glade/grapejuice.glade:668
 msgid "page2"
 msgstr "página2"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:706
+#: src/grapejuice_common/assets/glade/grapejuice.glade:710
 msgid "Configuration"
 msgstr "Configuración"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:720
+#: src/grapejuice_common/assets/glade/grapejuice.glade:724
 msgid "Explorer"
 msgstr "Explorador"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:734
+#: src/grapejuice_common/assets/glade/grapejuice.glade:738
 msgid "Registry Editor"
 msgstr "Editor del Registro"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:748
+#: src/grapejuice_common/assets/glade/grapejuice.glade:752
 msgid "Task Manager"
 msgstr "Administrador de Tareas"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:762
+#: src/grapejuice_common/assets/glade/grapejuice.glade:766
 msgid "Winetricks"
 msgstr "Winetricks"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:787
+#: src/grapejuice_common/assets/glade/grapejuice.glade:791
 msgid "Kill Wineserver"
 msgstr "Terminar el wineserver"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:851
+#: src/grapejuice_common/assets/glade/grapejuice.glade:855
 msgid "Create"
 msgstr "Creár"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:864
+#: src/grapejuice_common/assets/glade/grapejuice.glade:868
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:877
+#: src/grapejuice_common/assets/glade/grapejuice.glade:881
 msgid "Save Changes"
 msgstr "Guardar cambios"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:915
+#: src/grapejuice_common/assets/glade/grapejuice.glade:919
 msgid "Install Roblox"
 msgstr "Instalar Roblox"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:931
+#: src/grapejuice_common/assets/glade/grapejuice.glade:935
 msgid "Open Drive C"
 msgstr "Abrir Disco C"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:947
+#: src/grapejuice_common/assets/glade/grapejuice.glade:951
 msgid "Edit FFlags"
 msgstr "Editar Fast Flags"
 
-#: src/grapejuice_common/assets/glade/grapejuice.glade:1012
+#: src/grapejuice_common/assets/glade/grapejuice.glade:1016
 msgid "Wine Apps"
 msgstr "Aplicaciones de Wine"
 

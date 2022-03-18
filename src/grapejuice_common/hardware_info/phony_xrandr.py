@@ -1,3 +1,4 @@
+from dataclasses import asdict
 from typing import List
 
 from grapejuice_common.hardware_info.lspci import LSPci, LSPciEntry
@@ -46,13 +47,16 @@ class PhonyXRandR(IXRandR):
         lspci = LSPci()
 
         self._providers = list(map(lambda t: pci_entry_to_phony_xrandr_entry(*t), enumerate(lspci.graphics_cards)))
-        if len(self._providers) > 1:
-            self._providers[-1].cap = [
+        if len(self._providers) > 0:
+            d = asdict(self._providers[-1])
+            d["cap"] = [
                 "Sink Output",
                 "Sink Offload",
                 "Source Output",
                 "Source Offload"
             ]
+
+            self._providers[-1] = XRandRProvider(**d)
 
     @property
     def providers(self) -> List[XRandRProvider]:

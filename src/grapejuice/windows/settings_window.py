@@ -56,7 +56,7 @@ def _do_uninstall_grapejuice():
     )
 
     try:
-        dialog(_("Grapejuice will now uninstall itself, the program will close when the process is finished."))
+        dialog(_("Grapejuice will now uninstall itself and will close when the process is finished."))
         uninstall.go(parameters)
 
     except Exception as e:
@@ -75,12 +75,12 @@ def _install_actions():
         description=_("Manage your Grapejuice installation"),
         settings=[
             GrapeSetting(
-                key="re-install",
-                display_name=_("Re-install"),
-                description=_("Performing this action will re-install Grapejuice."),
+                key="reinstall",
+                display_name=_("Reinstall"),
+                description=_("Performing this action will reinstall Grapejuice."),
                 value=GrapeSettingAction(
-                    key="re-install",
-                    display_name=_("Re-install"),
+                    key="reinstall",
+                    display_name=_("Reinstall"),
                     action=lambda *_: _do_reinstall_grapejuice()
                 ),
             ),
@@ -103,15 +103,14 @@ def _general_settings():
         _from_user_settings(
             key="show_fast_flag_warning",
             default_value=True,
-            display_name=_("Show Fast Flag Warning"),
+            display_name=_("Show Fast Flag warning"),
             description=_("Should Grapejuice warn you when opening the Fast Flag Editor?")
         ),
         _from_user_settings(
             key="no_daemon_mode",
             default_value=True,
-            display_name=_("Use Grapejuice daemon"),
-            description=_("Enable or Disable the Grapejuice Daemon. This is an advanced debugging feature only "
-                        "meant for people who work on Wine itself."),
+            display_name=_("Use the Grapejuice daemon"),
+            description=_("This is an advanced debugging feature only meant for people who work on Wine itself."),
             bidirectional_transformer=lambda b: not b
         ),
         _from_user_settings(

@@ -231,7 +231,7 @@ class WineprefixCoreControl:
         ]
 
         try:
-            available_homes.append(variables.system_wine_home())
+            available_homes.append(str(variables.system_wine_home()))
 
         except CouldNotFindSystemWineHome as e:
             log.warning(str(e))

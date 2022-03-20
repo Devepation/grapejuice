@@ -1,6 +1,7 @@
 import traceback
 from pathlib import Path
-from typing import List, Optional
+from string import Template
+from typing import List, Optional, Tuple
 
 from grapejuice_common.wine.wineprefix_hints import WineprefixHint
 
@@ -106,4 +107,27 @@ class WineHomeInvalid(PresentableError):
             description=f"The wine home path pointing to {wine_home} is invalid! Make sure the directory at this "
                         "location contains a valid wine installation. 'wine_home' must point to a directory "
                         "containing your Wine installation files (bin, lib, etc... "
+        )
+
+
+class NoValidWineHomes(PresentableError):
+    def __init__(self, available_homes: List[str], invalid_reasons: List[Tuple[Path, str]]):
+        reasons_lines = []
+        for home_path, reason in invalid_reasons:
+            reasons_lines.append(f"Wine home '{home_path}' is invalid because: {reason}")
+
+        description_template = Template("""\
+Grapejuice could not find a valid Wine Home directory to use. Keep in mind that a valid Wine Home
+is a directory of a Wine build where the bin, lib, etc directories are located. If you have used an
+older guide that still uses a path ending in /bin, please remove the /bin part of the path.
+
+Reasons for Wine homes being invalid:
+$REASONS_BLOB
+        """)
+
+        super().__init__(
+            title="Grapejuice could not find a valid wine home",
+            description=description_template.substitute({
+                "REASONS_BLOB": "\n".join(reasons_lines)
+            })
         )

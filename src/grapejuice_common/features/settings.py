@@ -29,6 +29,7 @@ k_enabled_tweaks = "enabled_tweaks"
 k_ignore_wine_version = "ignore_wine_version"
 k_unsupported_settings = "unsupported_settings"
 k_try_profiling_hardware = "try_profiling_hardware"
+k_default_wine_home = "default_wine_home"
 
 
 def default_settings() -> Dict[str, any]:
@@ -41,6 +42,7 @@ def default_settings() -> Dict[str, any]:
         k_disable_updates: False,
         k_ignore_wine_version: False,
         k_try_profiling_hardware: True,
+        k_default_wine_home: "",
         k_wineprefixes: [],
         k_unsupported_settings: dict()
     }

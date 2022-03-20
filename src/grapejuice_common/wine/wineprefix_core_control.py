@@ -12,11 +12,10 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from string import Template
-from typing import Union, List, Dict, Optional
+from typing import Union, List, Dict, Optional, Tuple
 
 from grapejuice_common import paths
-from grapejuice_common.errors import HardwareProfilingError, WineHomeNotAbsolute, WineHomeInvalid, \
-    CouldNotFindSystemWineHome
+from grapejuice_common.errors import HardwareProfilingError, CouldNotFindSystemWineHome, NoValidWineHomes
 from grapejuice_common.hardware_info.graphics_card import GPUVendor
 from grapejuice_common.logs.log_util import log_function
 from grapejuice_common.models.wineprefix_configuration_model import WineprefixConfigurationModel
@@ -224,36 +223,87 @@ class WineprefixCoreControl:
     @property
     def wine_home(self) -> Path:
         from grapejuice_common import variables
+        from grapejuice_common.features.settings import current_settings, k_default_wine_home
 
-        wine_home_string = self._configuration.wine_home.strip()
+        available_homes = [
+            self._configuration.wine_home.strip(),
+            current_settings.get(k_default_wine_home, default_value="").strip()
+        ]
 
-        if wine_home_string.strip():
-            log.info(f"Wine home string: {wine_home_string}")
+        try:
+            available_homes.append(variables.system_wine_home())
 
-            if wine_home_string.startswith(f"~{os.path.sep}"):
-                wine_home = Path(wine_home_string).expanduser()
+        except CouldNotFindSystemWineHome as e:
+            log.warning(str(e))
+
+        total_number_of_available_homes = len(available_homes)
+
+        available_homes = list(
+            filter(
+                None,
+                map(
+                    str.strip,
+                    available_homes
+                )
+            )
+        )
+
+        filtered_available_homes = total_number_of_available_homes - len(available_homes)
+        if filtered_available_homes > 0:
+            log.info("Some wine homes were filtered out because they were empty strings")
+
+        def string_to_path(home_string: str) -> Optional[Path]:
+            if home_string.startswith(f"~{os.path.sep}"):
+                home_path = Path(home_string).expanduser()
 
             else:
-                wine_home = Path(wine_home_string)
+                home_path = Path(home_string)
 
-        else:
-            try:
-                wine_home = variables.system_wine_home()
+            return home_path
 
-            except CouldNotFindSystemWineHome as e:
-                raise WineHomeInvalid(None) from e
+        invalid_reasons: List[Tuple[Path, str]] = []
 
-        log.info(f"Wine home is {wine_home}")
+        def with_reason(home_path: Path, reason: str) -> bool:
+            invalid_reasons.append((home_path, reason))
+            return False
 
-        if not wine_home.is_absolute():
-            raise WineHomeNotAbsolute(wine_home)
+        def is_valid_home_path(home_path: Path):
+            if not home_path.is_absolute():
+                return with_reason(home_path, f"Home path '{home_path}' is not an absolute path starting at /")
 
-        wine_bin = wine_home / "bin"
-        wine_home_valid = wine_home.exists() and wine_home.is_dir() and wine_bin.exists() and wine_bin.is_dir()
-        if not wine_home_valid:
-            raise WineHomeInvalid(wine_home)
+            if not home_path.exists():
+                return with_reason(home_path, f"Home path '{home_path}' does not exist")
 
-        return wine_home
+            if not home_path.is_dir():
+                return with_reason(home_path, f"Home path '{home_path}' is not a directory")
+
+            wine_bin = home_path / "bin"
+
+            if not wine_bin.exists():
+                return with_reason(home_path, f"Wine bin path in wine home '{home_path}' does not exist")
+
+            if not wine_bin.is_dir():
+                return with_reason(home_path, f"Wine bin path in wine home '{home_path}' is not a directory")
+
+            return True
+
+        usable_homes = list(
+            filter(
+                is_valid_home_path,
+                filter(
+                    None,
+                    map(
+                        string_to_path,
+                        available_homes
+                    )
+                )
+            )
+        )
+
+        if len(usable_homes) <= 0:
+            raise NoValidWineHomes(available_homes, invalid_reasons)
+
+        return usable_homes[0]
 
     @property
     def wine_bin(self):

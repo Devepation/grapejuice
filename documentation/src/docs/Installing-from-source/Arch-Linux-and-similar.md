@@ -74,6 +74,7 @@ Grapejuice requires several native dependencies for the user interface, plus you
 - gtk-update-icon-cache
 - shared-mime-info
 - mesa-utils
+- wine
 
 If you want to install them all at once, you can make use of this handy command:
 ```sh

@@ -16,7 +16,7 @@ While not required, the following setup is suggested:
 
 ## 🚀 Installing Grapejuice
 
- - 📦 Grapejuice can be installed from the package or from the source code. 
+ - 📦 Grapejuice can be installed from the package or from the source code.
  - 🚀 It's recommended that you install Grapejuice from the package if possible.
  - 🌱 Follow the installation guide that's appropriate for your distribution.
 
@@ -44,6 +44,8 @@ While not required, the following setup is suggested:
   - LMDE4 (Debbie): [Install from package](Installing-from-package/Debian-10-and-similar) or
     [install from source](Installing-from-source/Debian-10-and-similar)
 - Arch Linux: [Install from package](Installing-from-package/Arch-Linux-and-similar) or
+  [install from source](Installing-from-source/Arch-Linux-and-similar)
+- Steam Deck (SteamOS 3.0): [Install from package](Installing-from-package/Arch-Linux-and-similar) or
   [install from source](Installing-from-source/Arch-Linux-and-similar)
 - Manjaro Linux: [Install from package](Installing-from-package/Arch-Linux-and-similar) or
   [install from source](Installing-from-source/Arch-Linux-and-similar)

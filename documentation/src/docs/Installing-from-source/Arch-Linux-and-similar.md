@@ -8,6 +8,7 @@ to the following distributions:
 
 - Arch Linux
 - Manjaro Linux
+- SteamOS 3.0
 
 ---
 
@@ -17,6 +18,10 @@ to the following distributions:
 
 :package: This setup guide assumes you have AUR support enabled on your system, which implies that the `base-devel`
 package is installed and that your account can use the `sudo` command.
+
+## SteamOS 3.0
+ 
+Before you begin, if you are using SteamOS 3.0, you will need to run `sudo steamos-readonly disable` once you have done that, you may continue.
 
 ## Enabling 32-bit support
 

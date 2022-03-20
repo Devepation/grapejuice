@@ -13,7 +13,7 @@ try:
     architecture = subprocess.check_output(["uname", "-m"]).decode("UTF-8").strip()
     expected_architectures = ("x86_64", "amd64")
 
-    if architecture.lower() not in (expected_architectures):
+    if architecture.lower() not in expected_architectures:
         msg = f"Roblox Studio will only run on the x86_64 or amd64 CPU architectures. " \
               f"The CPU architecture of this machine is {architecture}. The installer will now exit."
         print(msg, file=sys.stderr)
@@ -29,10 +29,10 @@ REQUIRED_MINOR = 7
 def perform_install():
     subprocess.check_call([sys.executable, "setup.py", "install_locally"])
 
-    unofficial_guide_warning = "WARNING: Unofficial installation guides are not supported!\n" \
-                               "If you did not use the official documentation, found at https://brinkervii.gitlab.io/grapejuice/docs/," \
-                               "Grapejuice may not work properly!\n" \
-                               "Otherwise, if you're using the official documentation or know what you're doing, ignore this message."
+    unofficial_guide_warning = """WARNING: Unofficial installation guides are not supported! If you did not use the
+    official documentation, found at https://brinkervii.gitlab.io/grapejuice/docs/, Grapejuice may not work properly!
+    Otherwise, if you're using the official documentation or know what you're doing, ignore this message. """
+
     print(unofficial_guide_warning, file=sys.stderr)
 
 

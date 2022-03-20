@@ -121,6 +121,9 @@ Grapejuice could not find a valid Wine Home directory to use. Keep in mind that 
 is a directory of a Wine build where the bin, lib, etc directories are located. If you have used an
 older guide that still uses a path ending in /bin, please remove the /bin part of the path.
 
+The list of available Wine homes is:
+$AVAILABLE_HOMES
+
 Reasons for Wine homes being invalid:
 $REASONS_BLOB
         """)
@@ -128,6 +131,7 @@ $REASONS_BLOB
         super().__init__(
             title="Grapejuice could not find a valid wine home",
             description=description_template.substitute({
+                "AVAILABLE_HOMES": "\n".join(available_homes),
                 "REASONS_BLOB": "\n".join(reasons_lines)
             })
         )

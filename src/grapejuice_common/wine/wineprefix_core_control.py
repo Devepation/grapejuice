@@ -303,7 +303,10 @@ class WineprefixCoreControl:
         if len(usable_homes) <= 0:
             raise NoValidWineHomes(available_homes, invalid_reasons)
 
-        return usable_homes[0]
+        wine_home = usable_homes[0]
+        log.info(f"Using Wine Home {wine_home}")
+
+        return wine_home
 
     @property
     def wine_bin(self):

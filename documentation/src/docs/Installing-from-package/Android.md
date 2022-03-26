@@ -61,7 +61,7 @@ You will need a desktop environment, this guide will be using XFCE. Indtall XFCE
 apt install xfce4
 ```
 
-Install a VNC server. A VNC server will allow you to connect to your Ubuntu installation using a VNC client. 
+Install a VNC server. A VNC server will allow you to connect to your Ubuntu installation using a VNC client.
 
 ```sh
 apt install tightvncserver
@@ -117,7 +117,7 @@ Finally, hit "create", then tap on the new entry to connect. You should now be s
 
 Make sure you're logged into Ubuntu!
 
-Optionally, you can follow the Debian 10 installation guide [here](Debian-10-and-similar.md). However, please keep in mind that the use of 'sudo'is omitted.
+Optionally, you can follow the Debian 10 installation guide [here](Debian-10-and-similar). However, please keep in mind that the use of 'sudo'is omitted.
 
 
 
@@ -154,7 +154,7 @@ apt update
 Finally, install Grapejuice using the apt package manager.
 
 ```sh
-apt install -y grapejuice 
+apt install -y grapejuice
 ```
 
 Once Grapejuice has been installed, you can proceed to the section below.

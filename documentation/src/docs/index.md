@@ -58,8 +58,8 @@ While not required, the following setup is suggested:
 - Calculate: [Install from source](Installing-from-source/Gentoo-Linux-and-similar)
 - Funtoo: [Install from source](Installing-from-source/Gentoo-Linux-and-similar)
 - Sabayon: [Install from source](Installing-from-source/Gentoo-Linux-and-similar)
-- FreeBSD: [Install from source](Installing-from-source/FreeBSD.md)
-- Android: [Install from package](Installing-from-package/Android.md)
+- FreeBSD: [Install from source](Installing-from-source/FreeBSD)
+- Android: [Install from package](Installing-from-package/Android)
 
 **Please note that the following distributions are NOT supported:**
 

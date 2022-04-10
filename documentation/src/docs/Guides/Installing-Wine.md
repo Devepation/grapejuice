@@ -22,6 +22,8 @@ wget https://pastebin.com/raw/5SeVb005 -O install.py
 python3 install.py
 ```
 
+**NOTE:** This will not override the already existing Wine in your system. it will install it in a seperate folder.
+
 ### Compiling Wine TKG
 
 If you'd like to instead compile Wine, you can use [this guide](Compiling-Wine-TKG).
@@ -32,5 +34,10 @@ Vanilla Wine does not currently have the mouse patch, meaning the mouse bug will
 
 If your distribution provides a package for Wine, usually named `wine`, which provides Wine 7.0 or above,
 install that from your package manager.
+
+## Installing Wine libraries
+
+It is generally reccomended to install the `wine` and `wine` (32bit) package provided by your distribution, as it comes with libraries required to run Roblox.
+Unless you compile Wine yourself. In that case install the dependencies manually.
 
 Otherwise, use the [download page for Wine](https://wiki.winehq.org/Download).

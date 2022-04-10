@@ -49,6 +49,8 @@ While not required, the following setup is suggested:
   [install from source](Installing-from-source/Arch-Linux-and-similar)
 - Manjaro Linux: [Install from package](Installing-from-package/Arch-Linux-and-similar) or
   [install from source](Installing-from-source/Arch-Linux-and-similar)
+- Endeavour Linux: [Install from package](Installing-from-package/Arch-Linux-and-similar) or
+  [install from source](Installing-from-source/Arch-Linux-and-similar)
 - Void Linux: [Install from source](Installing-from-source/Void-Linux)
 - NixOS: [Install from package](Installing-from-package/NixOS)
 - Solus: [Install from source](Installing-from-source/Solus)
@@ -81,3 +83,4 @@ These pages may be useful for debugging or experimenting with Grapejuice:
 
 - [Viewing Grapejuice's logs](Grapejuice-Logs)
 - [Installing Wine](Guides/Installing-Wine)
+- [Installing Graphics Libraries](Guides/Installing-Graphics-Libraries)

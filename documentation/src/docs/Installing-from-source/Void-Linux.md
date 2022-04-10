@@ -24,9 +24,11 @@ cd /tmp/grapejuice
 ./install.py
 ```
 
-## Installing Graphics dependencies
+## Enabling 32-bit support
 
-See [Graphics Drivers](https://docs.voidlinux.org/config/graphical-session/graphics-drivers/index.html)
+```sh
+sudo xbps-install void-repo-multilib
+```
 
 ## Installing Audio dependencies
 
@@ -45,7 +47,7 @@ See [this guide](../Guides/Installing-Wine) for instructions on installing the p
 Wine will also require dependencies to make Roblox function correctly.
 
 ```sh
-sudo xbps-install -S freetype-32bit gnutls-32bit libgcc-32bit
+sudo xbps-install -S freetype-32bit gnutls-32bit libgcc-32bit libXi-32bit
 ```
 
 ## 🤔 Still having issues?

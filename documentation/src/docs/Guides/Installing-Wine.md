@@ -37,7 +37,12 @@ install that from your package manager.
 
 ## Installing Wine libraries
 
-It is generally reccomended to install the `wine` and `wine` (32bit) package provided by your distribution, as it comes with libraries required to run Roblox.
+It is generally reccomended to install the `wine` and `wine` (32bit) package provided by your distribution, as it comes with libraries such as for Audio and Font rendering and X libraries (Required for mouse locking), it is needed to run Roblox.
 Unless you compile Wine yourself. In that case install the dependencies manually.
 
 Otherwise, use the [download page for Wine](https://wiki.winehq.org/Download).
+
+## Installing graphics dependencies
+
+Graphics dependencies are needed to render Roblox graphics. it can result in Crashes or White/Black screens.
+See [Installing Graphics Libraries](Installing-Graphics-Libraries)

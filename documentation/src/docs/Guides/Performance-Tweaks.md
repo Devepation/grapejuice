@@ -12,7 +12,10 @@ This page describes some of the ways to improve performance and reduce input lag
 
 ### Using Wayland
 
-Using Wayland with xwayland can sometimes improve performance.
+Using Wayland with Xwayland can sometimes improve performance.
+
+**NOTE**: Wayland is currently experimental.
+Nvidia on Wayland is also quite unstable (This statement will change with time). If you have an GPU like Intel or AMD, You'd have to compile Wine with Wayland support.
 
 ### Change the renderer
 

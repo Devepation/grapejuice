@@ -35,6 +35,11 @@ Grapejuice UI, go to the player wineprefix, and disable "Desktop App".
 If you're using Firefox, go to about:config and set `network.http.referer.XOriginPolicy`
 and `network.http.sendRefererHeader` to `1`.
 
+## Roblox doesn't launch or results in a Black/White screen
+
+See [Installing Graphics Libraries](Guides/Installing-Graphics-Libraries)
+Afterwards, Kill your Wineprefix via 'Wine Apps'.
+
 ## Grapejuice does not launch at all
 
 This is a problem that can have many causes. The first step to fixing an issue that presents itself this way is by
@@ -89,6 +94,9 @@ If you need to use the built-in screen recorder, follow the below steps:
 ## Cursor is not unlocked after locking the cursor
 
 You need a patched version of Wine to solve this. See [this guide](Guides/Installing-Wine).
+
+If you do have the wine patched already, Install `wine` From your linux distribution.
+It should contains the libXi (32-bit) library required to lock the cursor. If it doesn't install it manually.
 
 ## Voice chat doesn't work
 

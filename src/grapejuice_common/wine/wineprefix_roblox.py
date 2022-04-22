@@ -11,7 +11,7 @@ from grapejuice_common.errors import RobloxExecutableNotFound
 from grapejuice_common.models.wineprefix_configuration_model import WineprefixConfigurationModel, ThirdPartyKeys
 from grapejuice_common.roblox_product import RobloxProduct
 from grapejuice_common.roblox_renderer import RobloxRenderer
-from grapejuice_common.util import download_file
+from grapejuice_common.util import download_file, roblox_version
 from grapejuice_common.wine.registry_file import RegistryFile
 from grapejuice_common.wine.wineprefix_core_control import WineprefixCoreControl, ProcessWrapper
 from grapejuice_common.wine.wineprefix_paths import WineprefixPaths
@@ -132,6 +132,18 @@ class WineprefixRoblox:
         return possible_locations[0]
 
     @property
+    def current_player_version_settings_path(self):
+        return _app_settings_path(
+            self._prefix_paths.roblox_program_files / "Versions" / roblox_version.current_player_version() / "RobloxPlayerBeta.exe"
+        )
+
+    @property
+    def current_studio_version_settings_path(self):
+        return _app_settings_path(
+            self._prefix_paths.roblox_program_files / "Versions" / roblox_version.current_studio_version() / "RobloxPlayerBeta.exe"
+        )
+
+    @property
     def roblox_studio_app_settings_path(self) -> Path:
         return _app_settings_path(self.roblox_studio_executable_path)
 
@@ -141,11 +153,17 @@ class WineprefixRoblox:
 
     @property
     def all_studio_app_settings_paths(self) -> List[Path]:
-        return list(map(_app_settings_path, self.locate_all_roblox_executables("RobloxStudioBeta.exe")))
+        ls = list(map(_app_settings_path, self.locate_all_roblox_executables("RobloxStudioBeta.exe")))
+        ls.append(self.current_studio_version_settings_path)
+
+        return list(set(ls))
 
     @property
     def all_player_app_settings_paths(self) -> List[Path]:
-        return list(map(_app_settings_path, self.locate_all_roblox_executables("RobloxPlayerLauncher.exe")))
+        ls = list(map(_app_settings_path, self.locate_all_roblox_executables("RobloxPlayerLauncher.exe")))
+        ls.append(self.current_player_version_settings_path)
+
+        return list(set(ls))
 
     @property
     def is_installed(self) -> bool:

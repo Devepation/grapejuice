@@ -15,7 +15,7 @@ Grapejuice requires a set of libraries to be installed and to be run. These depe
 following command:
 
 ```sh
-sudo dnf install gettext git python3-devel python3-pip cairo-devel gobject-introspection-devel cairo-gobject-devel make xdg-utils glx-utils
+sudo dnf install gettext git python3-devel python3-pip cairo-devel gobject-introspection-devel cairo-gobject-devel make xdg-utils glx-utils freetype
 ```
 
 ## Installing Grapejuice

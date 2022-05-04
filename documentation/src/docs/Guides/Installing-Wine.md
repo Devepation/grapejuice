@@ -22,7 +22,7 @@ wget https://pastebin.com/raw/5SeVb005 -O install.py
 python3 install.py
 ```
 
-**NOTE:** This will not override the already existing Wine in your system. it will install it in a seperate folder.
+**NOTE:** This will not override the already existing Wine in your system. it will install it in a separate folder.
 
 ### Compiling Wine TKG
 

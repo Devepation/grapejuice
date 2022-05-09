@@ -132,15 +132,29 @@ class WineprefixRoblox:
         return possible_locations[0]
 
     @property
+    def versions_directory(self) -> Path:
+        candidates = [
+            *list(map(lambda p: p / "Versions", self._prefix_paths.possible_roblox_appdata)),
+            self._prefix_paths.roblox_program_files / "Versions"
+        ]
+
+        pick = next(filter(lambda p: p.exists(), candidates), None)
+        if not pick:
+            # Pick program files as that's the directory chosen in non-staging
+            pick = candidates[-1]
+
+        return pick
+
+    @property
     def current_player_version_settings_path(self):
         return _app_settings_path(
-            self._prefix_paths.roblox_program_files / "Versions" / roblox_version.current_player_version() / "RobloxPlayerBeta.exe"
+            self.versions_directory / roblox_version.current_player_version() / "RobloxPlayerBeta.exe"
         )
 
     @property
     def current_studio_version_settings_path(self):
         return _app_settings_path(
-            self._prefix_paths.roblox_program_files / "Versions" / roblox_version.current_studio_version() / "RobloxPlayerBeta.exe"
+            self.versions_directory / roblox_version.current_studio_version() / "RobloxPlayerBeta.exe"
         )
 
     @property

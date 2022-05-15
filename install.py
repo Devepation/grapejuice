@@ -84,7 +84,7 @@ def err_py37():
     ver = f"{REQUIRED_MAJOR}.{REQUIRED_MINOR}"
 
     show_err("Out of date",
-             f"Your current version of python is out of date and therefore Grapejuice cannot be installed.\n\n"
+             f"Your current version of Python is out of date and therefore Grapejuice cannot be installed.\n\n"
              f"Python {ver} is required. Check the Grapejuice source repository for the installation instructions.\n\n"
              f"You have:\n{sys.version}"
              )

@@ -2,7 +2,7 @@ title: Install Wine
 ---
 ## About Wine issues
 
-Using a version of Wine that has not been patched may lead to issues like the in-game cursor getting stuck, the game crashing, or being kicked automatically with an error code.
+Using a version of Wine that has not been patched may lead to issues like the game crashing, or being kicked automatically with an error code.
 
 To fix this, a patched version of Wine is required.
 
@@ -32,14 +32,12 @@ If you'd like to instead compile Wine, you can use [this guide](Compiling-Wine-T
 
 ## Installing vanilla Wine
 
-Vanilla Wine does not currently have the mouse patch, meaning the mouse bug will occur when using vanilla Wine.
-
 If your distribution provides a package for Wine, usually named `wine`, which provides Wine 7.0 or above,
 install that from your package manager.
 
 ## Installing Wine libraries
 
-It is generally reccomended to install the `wine` and `wine` (32bit) package provided by your distribution, as it comes with libraries such as for Audio and Font rendering and X libraries (Required for mouse locking), it is needed to run Roblox.
+It is generally recommended to install the `wine` and `wine` (32bit) package provided by your distribution, as it comes with libraries such as for Audio and Font rendering and X libraries, it is needed to run Roblox.
 Unless you compile Wine yourself. In that case install the dependencies manually.
 
 Otherwise, use the [download page for Wine](https://wiki.winehq.org/Download).

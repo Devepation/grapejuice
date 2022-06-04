@@ -21,12 +21,13 @@ Nvidia on Wayland is also quite unstable (This statement will change with time).
 
 You can change the renderer by opening the Grapejuice app, selecting `Player` on the left, and then modifying the `Roblox Renderer` under `Graphics Settings`. Generally, you can try each one of them and seeing which one works best. If Roblox happens to not launch after the logo shows up, you can enable `Use Mesa OpenGL version override`.
 
-### Using DXVK
+### Improving Roblox Player performance
 
 Instead of changing the renderer, you can also try DXVK.
 
-First, open the Grapejuice App, select `Player` on the left, and then enable `Use DXVK D3D implementation`. You also need to set the Roblox renderer to `DX11`, as shown above.
+First, open the Grapejuice App, select `Player` on the left, and then enable `Use DXVK D3D implementation`. You also need to set the Roblox renderer to `DX11`, as shown above. This is depends on your setup but DXVK is more popular, try a whole bunch of different renderers and see what works best.
 
+If you have a low end computer and/or want more FPS, enable the FFlag `DFFlagDebugRenderForceTechnologyVoxel`
 ## Improving Roblox Studio performance
 
 Open Studio, then press Alt+S, and then go to the renderer tab. Options such as the quality level and graphics level are available.
@@ -34,6 +35,7 @@ Open Studio, then press Alt+S, and then go to the renderer tab. Options such as 
 You can also open the Grapejuice app, select studio on the left, and change the renderer.
 
 Studio's Vulkan renderer requires the [child window renderer patch](https://github.com/Frogging-Family/wine-tkg-git/blob/master/wine-tkg-git/wine-tkg-patches/misc/childwindow.patch). It should be included if you're already using Wine TKG. Note that the pre-built patched Wine provided on the documentation does not have the childwindow patch.
+
 
 ## Performance on laptops that use nVIDIA PRIME
 
@@ -43,7 +45,7 @@ People with a laptop, specifically one which uses nVIDIA Optimus technology (hyb
 
 This is because Roblox is using the integrated graphics card instead of the dedicated one.
 
-The solution is to select the nVIDIA GPU as your primary one. It may also work to use hybrid mode and select the dedicated GPU from inside Grapejuice. 
+The solution is to select the nVIDIA GPU as your primary one. It may also work to use hybrid mode and select the dedicated GPU from inside Grapejuice.
 
 Due to the fast-changing and distro-dependent nature of nVIDIA PRIME configuration, we cannot document it here in-depth.
 

@@ -89,7 +89,7 @@ sudo xbps-install nvidia-libs-32bit vulkan-loader vulkan-loader-32bit
 ##### AMD
 
 ```sh
-sudo xbps-install mesa-dri vulkan-loader vulkan-loader-32bit
+sudo xbps-install mesa-dri mesa-dri-32bit vulkan-loader vulkan-loader-32bit mesa-vulkan-radeon mesa-vulkan-radeon-32bit
 ```
 
 ##### Intel

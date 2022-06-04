@@ -9,9 +9,9 @@ latest version of Grapejuice!** Do you have an issue that is not described here?
 
 ---
 
-## The in-game cursor gets stuck after right-clicking
+## The in-game cursor doesn't lock after holding right-click to move the camera
 
-You need a patched version of Wine to solve this. See [this guide](Guides/Installing-Wine).
+This is due to a Roblox update causing an incompatibility with Wayland's handling of mouse events via XWayland. Switching to X11 on your display manager fixes this issue.
 
 ## Game crashing with "An unexpected error occurred and Roblox needs to quit."
 

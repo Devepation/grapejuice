@@ -39,7 +39,8 @@ menu.
 6. Since a new repository was added, you'll need to update your system so the package can be found: `sudo apt update`
 7. Before installing Grapejuice, we'll need to install the Wine package: `sudo apt install wine`
 8. Now, it's time to install the Grapejuice package: `sudo apt install -y grapejuice`
-9. **One more step!** Before you can jump into the game, you'll need to install the patched wine version using [this guide](../Guides/Installing-Wine). If you don't do this, you'll encounter issues such as the game not starting, or the in-game mouse pointer not moving when it should.
+9. Open Grapejuice (via terminal: grapejuice-gui)
+10. **One more step!** Before you can jump into the game, you'll need to install the patched wine version using [this guide](../Guides/Installing-Wine). If you don't do this, you'll encounter issues such as the game not starting, or the in-game mouse pointer not moving when it should.
 
 ## 🤔 Still having issues?
 

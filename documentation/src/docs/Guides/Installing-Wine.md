@@ -14,6 +14,8 @@ There are two different options: Installing a prebuilt patched Wine build, or co
 
 ### Installing a prebuilt patched Wine build
 
+**Before installing a prebuilt patched Wine build, open Grapejuice once. (via terminal: grapejuice-gui)**
+
 Run the commands below to automatically download a pre-compiled patched Wine:
 
 ```sh

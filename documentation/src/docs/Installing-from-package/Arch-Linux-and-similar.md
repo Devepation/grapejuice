@@ -29,8 +29,9 @@ that, you may continue.
    [learn how to install packages from the AUR manually](https://wiki.archlinux.org/title/Arch_User_Repository).
 3. Install the `base-devel` package group with `sudo pacman -S base-devel`.
 4. Install the `wine` package with `sudo pacman -S wine`.
-5. Get the patched wine version using [this guide](../Guides/Installing-Wine). If you don't do this, you'll encounter issues with the in-game mouse pointer or experience crashes.
-6. Install [grapejuice-git](https://aur.archlinux.org/packages/grapejuice-git/) through an AUR helper or manually.
+5. Install [grapejuice-git](https://aur.archlinux.org/packages/grapejuice-git/) through an AUR helper or manually.
+6. Open Grapejuice (via terminal: grapejuice-gui)
+7. Get the patched wine version using [this guide](../Guides/Installing-Wine). If you don't do this, you'll encounter issues with the in-game mouse pointer or experience crashes.
 
 Once Grapejuice has been installed, you can take a look at the sections below.
 
